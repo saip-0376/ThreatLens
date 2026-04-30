@@ -1,0 +1,13 @@
+version: '3'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./logs:/logs
+    depends_on:
+      - ml-service
+
+  ml-service:
+    build: ./ml-service
